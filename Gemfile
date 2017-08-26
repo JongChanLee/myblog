@@ -9,6 +9,12 @@ gem 'devise'
 gem 'jquery-rails'
 
 gem 'tinymce-rails'
+# gem 'tinymce-rails-langs'
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
+
+gem 'carrierwave'
+gem 'fog'
+
 gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
@@ -32,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', platform: [:ruby, :x64_mingw]
+gem 'bcrypt', platform: [:ruby]
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,0 +1,2 @@
+class UnpublishedPost < Post
+end
