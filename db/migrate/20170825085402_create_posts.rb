@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.1]
       t.string :title
       t.text :content
       t.references :user
-      t.string :type
+      t.string :type,           null: false,  default: 'PublishedPost'
 
       t.timestamps
     end

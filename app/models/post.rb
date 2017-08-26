@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   #             if: Proc.new { |post| post.state == 'unpublished' && Post.where(state: 0).count >= 1}
 
   belongs_to :user
-  has_many :tinymce_images, dependent: :destroy
+  # has_many :tinymce_images, dependent: :destroy
 
   # enum state: [:unpublished, :published]
 

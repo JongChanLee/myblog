@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170825092824) do
     t.string "title"
     t.text "content"
     t.integer "user_id"
-    t.integer "state", default: 0, null: false
+    t.string "type", default: "PublishedPost", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -26,10 +26,11 @@ ActiveRecord::Schema.define(version: 20170825092824) do
     t.string "alt"
     t.string "hint"
     t.string "file"
-    t.integer "post_id"
+    t.string "content_type"
+    t.integer "content_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_tinymce_images_on_post_id"
+    t.index ["content_type", "content_id"], name: "index_tinymce_images_on_content_type_and_content_id"
   end
 
   create_table "users", force: :cascade do |t|
