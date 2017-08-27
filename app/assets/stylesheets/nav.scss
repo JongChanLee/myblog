@@ -1,0 +1,19 @@
+header {
+  padding: 0.5rem 1rem;
+  h1 {
+    font-family: Tmon-Tium;
+    font-weight: 900;
+  }
+  nav {
+    a {
+      font-family: Tmon-Tium;
+      font-size: 1rem;
+      color: #181818;
+      transition: all 0.8s;
+      &:hover {
+        font-family: Tmon-Tium;
+        color: $main_color;
+      }
+    }
+  }
+}

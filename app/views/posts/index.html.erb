@@ -1,0 +1,6 @@
+<h2>글 목록</h2>
+
+<% @posts.each do |post| %>
+    <p><%= post.title %></p>
+    <p><%= post.content.html_safe %></p>
+<% end %>

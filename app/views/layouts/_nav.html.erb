@@ -1,0 +1,17 @@
+<header class="d-flex flex-row justify-content-between">
+  <h1>
+    <%= link_to 'TuTanKhamen.me', root_path %>
+  </h1>
+
+  <nav>
+    <h3 class="sr-only">menu</h3>
+    <ul class="d-flex flex-row justify-content-around align-items-center h-100">
+      <li class="px-2"><%= link_to 'Articles', posts_path %></li>
+      <% if user_signed_in? %>
+          <li class="px-2"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, data: {confirm: '로그아웃 하시겠습니까?'} %></li>
+      <% else %>
+          <li class="px-2"><%= link_to 'Sign In', new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

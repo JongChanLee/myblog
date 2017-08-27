@@ -1,7 +1,12 @@
+@import 'font';
 
+$main_color: #965251;
 
-@import "utilities";
-@import "normalize";
-@import "bootstrap-grid";
+@import "common/utilities";
+@import "common/normalize";
+@import "common/bootstrap-grid";
+
+@import "nav";
 
 @import "main";
+@import "posts";

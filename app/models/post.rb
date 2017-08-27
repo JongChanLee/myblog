@@ -1,13 +1,15 @@
 class Post < ApplicationRecord
-  # before_save :delete_ready_post,
-  #             if: Proc.new { |post| post.state == 'unpublished' && Post.where(state: 0).count >= 1}
+  # after_save는 update가 된다음에도 실행되는가?
+  after_save :set_imgs
 
   belongs_to :user
-  # has_many :tinymce_images, dependent: :destroy
+  has_many :tinymce_images, dependent: :destroy
 
-  # enum state: [:unpublished, :published]
 
-  # def delete_ready_post
-  #   Post.where(state: 0).first.destroy
-  # end
+
+  private
+  def set_imgs
+    logger.info self.title
+  end
+
 end

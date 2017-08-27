@@ -1,48 +1,78 @@
 class PostsController < ApplicationController
-  before_action :set_post, [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.where(state: 1).all
+    @posts = Post.where(published: true).all
   end
 
   def new
-    Post.create()
+    # unless Post.where(published: false).last.title.blank?
+    #   Post.create(user: current_user)
+    # end
+    @post = Post.new
   end
 
   def create
-    post = Post.find_by_state (0)
-    post.update (post_params)
+    case params[:commit]
+      when '저장'
+        @post = Post.new(post_params)
+        @post.published = true
+      when '임시저장'
+        @post = Post.new(post_params)
+      else
+        render :new
+    end
 
-    redirect_to post_path(post)
+    @post.user = current_user
+    if @post.save
+      redirect_to post_path(@post)
+    else
+      redirect_to posts_path
+    end
   end
-4
+
   def show
-    redirect_to post_path(@post)
+    unless @post.published
+      redirect_to posts_path
+    end
   end
 
   def edit
-
   end
 
   def update
+    case params[:commit]
+      when '저장'
+        @post.published = true
+        @post.update(post_params)
+        redirect_to post_path(@post)
+      when '임시저장'
+        @post.published = false
+        @post.update(post_params)
+        redirect_to posts_path
+      else
+        render :show
+    end
 
   end
 
   def destroy
-
+    @post.destroy
+    redirect_to posts_path
   end
 
+
   def tinymce_img_create
-    image = Image.new params.permit(:file, :alt, :hint)
+    image = TinymceImage.new params.permit(:file, :alt, :hint)
 
     if image.save
+      logger.info image.file.url
       render json: {
           image: {
               url: image.file.url
           }
       }, content_type: 'text/html'
-    else
-      redirect_to root_path
     end
   end
 

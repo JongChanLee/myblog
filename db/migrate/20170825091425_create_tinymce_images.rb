@@ -4,7 +4,7 @@ class CreateTinymceImages < ActiveRecord::Migration[5.1]
       t.string :alt
       t.string :hint
       t.string :file
-      t.references :content, polymorphic: true
+      t.integer :post_id
 
       t.timestamps
     end

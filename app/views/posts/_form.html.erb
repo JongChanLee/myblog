@@ -1,0 +1,10 @@
+<%= form_for @post do |f| %>
+
+    <%= f.text_field :title %>
+    <%= tinymce %>
+    <div class="tinymce-wrapper">
+      <%= f.text_area :content, class: 'tinymce', row: 40, col: 120 %>
+    </div>
+
+    <%= f.submit '저장' %>
+<% end %>
