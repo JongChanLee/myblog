@@ -1,8 +1,115 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-.tinymce-wrapper {
-  width: 80%;
+.posts {
+  &.index, &.show, &.new, &.edit {
+    min-height: calc(100vh - 4rem);
+  }
+  &.index {
+    .btn-new-post {
+      a {
+        border: 1px solid $main_color;
+        border-radius: 10px;
+        font-family: Tmon-Tium;
+        font-size: 1rem;
+        transition: all 0.3s;
+        line-height: 1;
+        &:hover {
+          background-color: lighten($main_color, 10%);
+        }
+      }
+    }
+    a.post {
+      border: 1px solid $main_color;
+      border-radius: 5px;
+      box-shadow: 0 0 5px 1px grey;
+      transition: all 0.4s;
+      &:hover {
+        box-shadow: 0 0 10px 5px grey;
+      }
+      &.unpublished {
+        background-color: slategrey;
+      }
+      article {
+        p {
+          white-space: nowrap;
+          overflow: hidden;
+          -ms-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+          font-family: Tmon-Monsori;
+          font-size: 0.8rem;
+          color: #666666;
+        }
+        h4 {
+          white-space: nowrap;
+          overflow: hidden;
+          -ms-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+          font-family: Tmon-Monsori;
+          font-size: 1.2rem;
+          line-height: 1;
+          @media (max-width: 767px) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+  &.show {
+    h2 {
+      flex: 1;
+      word-break: break-all;
+      white-space: normal;
+    }
+    .content {
+      word-break: break-all;
+      white-space: normal;
+    }
+    .btn-group {
+      a {
+        border: 1px solid $main_color;
+        border-radius: 5px;
+        font-family: Tmon-Monsori;
+        font-size: 1.2rem;
+        line-height: 1;
+        transition: all 0.4s;
+        &:hover {
+          background-color: lighten($main_color, 10%);
+        }
+      }
+    }
+  }
+  &.new, &.edit {
+    h2 {
+      font-family: Tmon-Tium;
+    }
+    form#form {
+      #post_title {
+        border: 1px solid $main_color;
+        font-family: Tmon-Monsori;
+        font-size: 1.2rem;
+        border-radius: 5px;
+      }
+      .tinymce-wrapper {
+        .tinymce {
+          height: 100vh;
+        }
+      }
+      .btn-wrapper {
+        input[type="submit"] {
+          border: 1px solid $main_color;
+          border-radius: 20px;
+          padding: 0.5rem 1rem;
+          font-family: Tmon-Monsori;
+          font-size: 1.2rem;
+          line-height: 1;
+          cursor: pointer;
+          background-color: white;
+          min-width: 100px;
+          margin: 0 1rem;
+          transition: all 0.4s;
+          &:hover {
+            background-color: lighten($main_color, 10%);
+          }
+        }
+      }
+    }
+  }
 }

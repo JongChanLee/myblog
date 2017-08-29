@@ -2,22 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.main-index {
-  padding-top: 10rem;
-  .comment {
-    h2 {
-      font-size: 3rem;
-      line-height: 1;
-      font-family: Tmon-Tium;
+.main {
+  &.index {
+    padding-top: 10rem;
+    min-height: calc(100vh - 4rem);
+    .comment {
+      h2 {
+        font-size: 3rem;
+        line-height: 1;
+        font-family: Tmon-Tium;
+      }
+      p {
+        word-break: keep-all;
+        font-family: Tmon-Monsori;
+      }
     }
-    p {
-      word-break: keep-all;
-      font-family: Tmon-Monsori;
+    .profile {
+      max-width: 100%;
+      width: 350px;
+      height: auto;
     }
-  }
-  .profile {
-    max-width: 100%;
-    width: 350px;
-    height: auto;
   }
 }

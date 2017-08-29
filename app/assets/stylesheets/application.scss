@@ -1,4 +1,5 @@
 @import 'font';
+@import "font-awesome";
 
 $main_color: #965251;
 
@@ -6,7 +7,8 @@ $main_color: #965251;
 @import "common/normalize";
 @import "common/bootstrap-grid";
 
-@import "nav";
+@import "nav_footer";
 
 @import "main";
 @import "posts";
+@import "devise";

@@ -1,6 +1,30 @@
-<h2>글 목록</h2>
-
-<% @posts.each do |post| %>
-    <p><%= post.title %></p>
-    <p><%= post.content.html_safe %></p>
-<% end %>
+<section class="posts index container pt-sm-3 pt-md-5">
+  <h2 class="sr-only">글 목록</h2>
+  <% if user_signed_in? && current_user.id == 1 %>
+      <div class="btn-new-post text-right mb-4">
+        <%= link_to 'New Post', new_post_path, class: 'py-2 px-3' %>
+      </div>
+  <% end %>
+  <div class="row">
+    <% @unpublished_posts.each do |post| %>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 my-2">
+          <%= link_to post_path(post), class: 'post unpublished d-block py-2 px-1' do %>
+              <article class="container">
+                <h4><%= post.title %></h4>
+                <p><%= post.content.html_safe %></p>
+              </article>
+          <% end %>
+        </div>
+    <% end %>
+    <% @posts.each do |post| %>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 my-2">
+          <%= link_to post_path(post), class: 'post d-block py-2 px-1' do %>
+              <article class="container">
+                <h4><%= post.title %></h4>
+                <p><%= post.content.html_safe %></p>
+              </article>
+          <% end %>
+        </div>
+    <% end %>
+  </div>
+</section>

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Myblog</title>
+<head lang="ko">
+  <title>TuTanKhamen's blog</title>
+  <meta charset="utf-8">
+
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -9,7 +11,9 @@
 
 </head>
 <body>
-<%= render 'layouts/nav' %>
+<%= render 'partials/nav' %>
+
 <%= yield %>
+<%= render 'partials/footer' %>
 </body>
 </html>

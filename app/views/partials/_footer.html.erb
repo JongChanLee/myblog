@@ -1,0 +1,29 @@
+<footer class="py-2">
+  <div class="container">
+    <div class="row flex-row justify-content-around">
+      <article class="px-2">
+        <h4>&lt; Contact \></h4>
+        <div class="content"><%= fa_icon 'envelope', text: 'tutan123@naver.com' %></div>
+        <div class="content">
+          <%= link_to 'https://github.com/JongChanLee', target: '_blank' do %>
+              <%= fa_icon 'github-alt', text: "JongChanLee's github" %>
+          <% end %>
+        </div>
+        <div class="content">
+          <%= link_to 'https://www.facebook.com/jongchanlee3754', target: '_blank' do %>
+              <%= fa_icon 'facebook-official', text: "JongChanLee's facebook" %>
+          <% end %>
+        </div>
+      </article>
+      <article class="px-2">
+          <h4>&lt; References \></h4>
+        <div class="content">
+          폰트는 <%= link_to '티몬', 'https://brunch.co.kr/@creative/32', target: '_blank' %>에서 배포하는 몬소리체와 <span>Tium</span>체를 사용하였습니다.
+        </div>
+        <div class="content">
+          메인 사진은 <%= link_to '유다훈님', 'http://tty4032.blog.me/', target: '_blank' %>이 찍어주셨습니다.
+        </div>
+      </article>
+    </div>
+  </div>
+</footer>

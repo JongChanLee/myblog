@@ -1,10 +1,10 @@
 toolbar:
-  - undo redo | fontsizeselect fontselect | forecolor backcolor | bold italic underline | alignleft aligncenter alignright | bullist numlist outdent indent | table  | codesample link uploadimage |
+  - undo redo | fontsizeselect fontselect | forecolor backcolor | bold italic underline | alignleft aligncenter alignright | bullist numlist outdent indent | table  | code codesample link uploadimage |
 plugins:
   - link
   - lists
   - textcolor colorpicker
-  - codesample
+  - codesample code
   - table
   - preview fullscreen
   - searchreplace
@@ -16,3 +16,6 @@ codesample_languages: [
         {text: 'CSS', value: 'css'},
         {text: 'Ruby', value: 'ruby'}
 ]
+
+font_formats: 'Tmon-monsori=Tmon-Monsori; Tmon-Tium=Tmon-Tium;'
+fontsize_formats: '8pt 10pt 12pt 14pt 15pt 18pt 24pt 36pt'

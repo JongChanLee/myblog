@@ -7,9 +7,8 @@ end
 
 gem 'devise'
 gem 'jquery-rails'
-
+gem 'font-awesome-rails'
 gem 'tinymce-rails'
-# gem 'tinymce-rails-langs'
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 
 gem 'carrierwave'

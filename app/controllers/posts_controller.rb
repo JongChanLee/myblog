@@ -4,12 +4,14 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.where(published: true).all
+    @unpublished_posts = Post.where(published: false).all
   end
 
   def new
     # unless Post.where(published: false).last.title.blank?
     #   Post.create(user: current_user)
     # end
+    # TODO: 임시저장 기능
     @post = Post.new
   end
 
@@ -33,7 +35,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    unless @post.published
+    if !@post.published && current_user.id != 1
       redirect_to posts_path
     end
   end
@@ -54,7 +56,6 @@ class PostsController < ApplicationController
       else
         render :show
     end
-
   end
 
   def destroy
