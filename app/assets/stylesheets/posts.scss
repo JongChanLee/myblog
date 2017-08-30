@@ -75,6 +75,64 @@
         }
       }
     }
+    .post-wrapper {
+      hr {
+        border-color: lighten($main_color, 50%);
+      }
+      .times {
+        font-size: 0.7rem;
+        font-family: Tmon-Monsori;
+        color: slategrey;
+      }
+      .comment-wrapper {
+        span {
+          font-family: BM-Dohyeon;
+          font-size: 0.8rem;
+          bold: 500;
+          color: darkgrey;
+        }
+        .comment {
+          .user {
+            font-size: 1rem;
+            color: #2E2F30;
+          }
+          .time {
+            font-size: 0.7rem;
+            font-family: BM-Dohyeon;
+          }
+          .content {
+            font-family: BM-Hanna;
+            font-size: 1.1rem;
+          }
+          span.btn {
+            cursor: pointer;
+            transition: all 0.3s;
+            &:hover {
+              color: lighten($main_color, 10%);
+            }
+          }
+        }
+        form {
+          width: 100%;
+          textarea {
+            resize-x: snone;
+            font-size: 1.1rem;
+            font-family: BM-Hanna;
+            height: 5rem;
+          }
+          input[type="submit"] {
+            border: 1px solid $main_color;
+            background-color: lighten($main_color, 20%);
+            font-family: Tmon-Monsori;
+            cursor: pointer;
+            transition: all 0.6s;
+            &:focus {
+              background-color: $main_color;
+            }
+          }
+        }
+      }
+    }
   }
   &.new, &.edit {
     h2 {

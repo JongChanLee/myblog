@@ -40,4 +40,8 @@ footer {
   position: relative;
   bottom: 0;
   background-color: $main_color;
+  .copyright {
+    font-family: BM-Hanna;
+    font-size: 1rem;
+  }
 }

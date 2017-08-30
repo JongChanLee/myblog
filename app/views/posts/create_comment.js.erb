@@ -1,0 +1,13 @@
+$('.comments').append('' +
+    '<div class="comment comment_<%= @comment.id %>">' +
+    '<div class="d-flex flex-row justify-content-between"><div><span class="user pr-2"><%= current_user.email %></span><span class="time"><%= @comment.created_at.strftime("%Y.%m.%d %H:%M") %></span></div' +
+    '<div><span class="btn btn-edit-comment pl-2" data-comment-id=<%= @comment.id %>>수정</span>' +
+    '<a data-confirm="댓글을 삭제하시겠습니까?" data-remote="true" rel="nofollow" data-method="delete" href="/posts/<%= @comment.post_id %>/comments/<%= @comment.id %>"><span class="btn">삭제</span></a>' +
+    '</div></div>' +
+    '<div class="content"><%= @comment.content %></div>' +
+    '<hr>' +
+    '</div>'
+);
+
+
+

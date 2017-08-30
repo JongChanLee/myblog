@@ -1,0 +1,2 @@
+$('#edit_comment').remove();
+$('.comment.comment_<%= @comment.id %>').css('display', 'block').children('.content').html('<%= @comment.content %>');
