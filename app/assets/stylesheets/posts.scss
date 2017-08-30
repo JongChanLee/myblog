@@ -37,18 +37,6 @@
           font-size: 0.8rem;
           color: #666666;
         }
-        h4 {
-          white-space: nowrap;
-          overflow: hidden;
-          -ms-text-overflow: ellipsis;
-          text-overflow: ellipsis;
-          font-family: Tmon-Monsori;
-          font-size: 1.2rem;
-          line-height: 1;
-          @media (max-width: 767px) {
-            font-size: 1rem;
-          }
-        }
       }
     }
   }
@@ -80,7 +68,7 @@
         border-color: lighten($main_color, 50%);
       }
       .times {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         font-family: Tmon-Monsori;
         color: slategrey;
       }
@@ -130,6 +118,13 @@
               background-color: $main_color;
             }
           }
+        }
+        .not-signed-in {
+          font-family: Tmon-Monsori;
+          font-size: 1.2rem;
+          color: dimgrey;
+          background-color: lightgrey;
+          line-height: 1;
         }
       }
     }
