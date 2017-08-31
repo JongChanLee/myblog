@@ -3,6 +3,13 @@
     min-height: calc(100vh - 4rem);
   }
   &.index {
+    a, a:hover, a:focus, a:visited {
+      font-family: inherit;
+      font-size: inherit;
+      outline: none;
+      text-decoration: none;
+      color: inherit;
+    }
     .btn-new-post {
       a {
         border: 1px solid $main_color;
@@ -51,6 +58,10 @@
       white-space: normal;
     }
     .btn-group {
+      a, a:hover, a:focus, a:visited {
+        text-decoration: none;
+        color: inherit;
+      }
       a {
         border: 1px solid $main_color;
         border-radius: 5px;
@@ -73,6 +84,13 @@
         color: slategrey;
       }
       .comment-wrapper {
+        a, a:hover, a:focus, a:visited {
+          font-family: inherit;
+          font-size: inherit;
+          outline: none;
+          text-decoration: none;
+          color: inherit;
+        }
         span {
           font-family: BM-Dohyeon;
           font-size: 0.8rem;

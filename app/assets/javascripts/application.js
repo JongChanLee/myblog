@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require tinymce
 //= require tinymce-jquery
+//= require prism
 //= require_tree .

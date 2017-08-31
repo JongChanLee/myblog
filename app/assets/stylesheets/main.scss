@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .main {
+  a, a:hover, a:focus, a:visited {
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+  }
   &.index {
     padding-top: 10rem;
     min-height: calc(100vh - 4rem);

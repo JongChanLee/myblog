@@ -10,9 +10,11 @@ gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'tinymce-rails'
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
+gem 'prism-rails'
 
 gem 'carrierwave'
 gem 'fog'
+
 
 gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
