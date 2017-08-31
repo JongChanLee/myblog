@@ -418,6 +418,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   sqlite3
+  therubyracer
   tinymce-rails
   tinymce-rails-imageupload (~> 4.0.0.beta)
   tzinfo-data
