@@ -17,5 +17,5 @@ codesample_languages: [
         {text: 'Ruby', value: 'ruby'}
 ]
 
-font_formats: 'Tmon-monsori=Tmon-Monsori; Tmon-Tium=Tmon-Tium;'
+#font_formats: 'Tmon-monsori=Tmon-Monsori; Tmon-Tium=Tmon-Tium;'
 fontsize_formats: '8pt 10pt 12pt 14pt 15pt 18pt 24pt 36pt'

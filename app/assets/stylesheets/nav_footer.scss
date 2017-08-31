@@ -5,6 +5,9 @@ header {
     line-height: 1;
   }
   nav {
+    ul{
+      list-style-type: none;
+    }
     a {
       font-family: Tmon-Tium;
       font-size: 1rem;
