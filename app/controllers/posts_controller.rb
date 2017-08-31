@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :set_comment, only: [:edit_comment, :update_comment, :destroy_comment]
 
   def index
-    @posts = Post.where(published: true).all
+    @posts = Post.where(published: true).order(created_at: 'desc')
     @unpublished_posts = Post.where(published: false).all
   end
 

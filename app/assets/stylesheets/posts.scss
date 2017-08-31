@@ -35,13 +35,18 @@
         background-color: slategrey;
       }
       article {
-        p {
+        h4 {
           white-space: nowrap;
           overflow: hidden;
           -ms-text-overflow: ellipsis;
           text-overflow: ellipsis;
           font-family: Tmon-Monsori;
+          font-size: 1.1rem;
+          width: 100%;
+        }
+        p.times {
           font-size: 0.8rem;
+          font-family: Tmon-Monsori;
           color: #666666;
         }
       }
