@@ -13,11 +13,12 @@ button {
     outline: none;
 }
 
-a, a:hover, a:focus {
+a, a:hover, a:focus, a:visited {
     font-family: inherit;
     font-size: inherit;
     outline: none;
     text-decoration: none;
+    color: inherit;
 }
 
 * {
