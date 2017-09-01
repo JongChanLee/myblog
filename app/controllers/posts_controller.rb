@@ -67,7 +67,7 @@ class PostsController < ApplicationController
 
   def tinymce_img_create
     image = TinymceImage.new params.permit(:file, :alt, :hint)
-
+    logger.info image.file
     if image.save
       render json: {
           image: {

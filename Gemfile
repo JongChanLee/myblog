@@ -13,7 +13,7 @@ gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'prism-rails'
 
 gem 'carrierwave'
-gem 'fog'
+gem 'fog-aws'
 
 
 gem 'figaro'
@@ -56,6 +56,7 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'rails_db'
+  gem 'awesome_print', require: 'ap'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
