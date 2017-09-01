@@ -13,7 +13,7 @@ gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'prism-rails'
 
 gem 'carrierwave'
-gem 'fog'
+gem 'fog-aws'
 
 
 gem 'figaro'
