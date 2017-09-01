@@ -58,9 +58,12 @@
       word-break: break-all;
       white-space: normal;
     }
-    .content {
+    .post-content {
       word-break: break-all;
       white-space: normal;
+      & img{
+        max-width: 100%;
+      }
     }
     .btn-group {
       a, a:hover, a:focus, a:visited {

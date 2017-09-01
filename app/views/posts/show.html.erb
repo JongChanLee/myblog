@@ -12,7 +12,7 @@
       <hr>
       <p class="times text-right">작성
         : <%= @post.created_at.strftime("%Y.%m.%d %H:%M") %> <%= "수정 : " + @post.updated_at.strftime("%Y.%m.%d %H:%M") if @post.updated_at != @post.created_at %></p>
-      <div class="content py-2">
+      <div class="post-content py-2">
         <%= content_tag :div, @post.content.html_safe %>
       </div>
 
