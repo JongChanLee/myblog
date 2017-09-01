@@ -83,12 +83,15 @@
       }
     }
     .post-wrapper {
+      h2 {
+        font-family: Tmon-Monsori;
+      }
       hr {
         border-color: lighten($main_color, 50%);
       }
       .times {
         font-size: 0.9rem;
-        font-family: Tmon-Monsori;
+        font-family: BM-Hanna;
         color: slategrey;
       }
       .comment-wrapper {
@@ -115,7 +118,7 @@
             font-family: BM-Dohyeon;
           }
           .content {
-            font-family: BM-Hanna;
+            font-family: BM-Jua;
             font-size: 1.1rem;
           }
           span.btn {
@@ -131,7 +134,7 @@
           textarea {
             resize-x: snone;
             font-size: 1.1rem;
-            font-family: BM-Hanna;
+            font-family: BM-Jua;
             height: 5rem;
           }
           input[type="submit"] {

@@ -1,8 +1,5 @@
 header {
   a, a:hover, a:focus, a:visited {
-    font-family: inherit;
-    font-size: inherit;
-    outline: none;
     text-decoration: none;
     color: inherit;
   }
@@ -19,9 +16,8 @@ header {
       font-family: Tmon-Tium;
       font-size: 1rem;
       color: #181818;
-      transition: all 0.8s;
+      transition: all 0.3s;
       &:hover {
-        font-family: Tmon-Tium;
         color: $main_color;
       }
     }
@@ -30,22 +26,17 @@ header {
 
 footer {
   a, a:hover, a:focus, a:visited {
-    font-family: inherit;
-    font-size: inherit;
-    outline: none;
     text-decoration: none;
     color: inherit;
   }
   article {
-    h4 {
+    h3 {
       font-family: Tmon-Tium;
     }
     .content {
-      font-family: Tmon-Monsori;
+      font-family: BM-Jua;
+      font-size: 1.1rem;
       line-height: 1.2;
-      span {
-        font-family: Tmon-Tium;
-      }
       a {
         text-decoration: underline;
         &:hover {
