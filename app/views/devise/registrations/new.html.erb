@@ -7,15 +7,15 @@
 
           <div class="d-flex flex-column py-2">
             <%= f.label :email %>
-            <%= f.email_field :email, required: true, autofocus: true, autocomplete: :off %>
+            <%= f.email_field :email, required: true, autofocus: true, autocomplete: :off, class: 'w-100' %>
           </div>
           <div class="d-flex flex-column py-2">
             <%= f.label :password %>
-            <%= f.password_field :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.password_field :password, required: true, class: 'w-100', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           </div>
           <div class="d-flex flex-column py-2">
             <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, required: true %>
+            <%= f.password_field :password_confirmation, required: true, class: 'w-100' %>
           </div>
           <div class="d-flex flex-row justify-content-between align-items-center mb-3 mt-2">
             <%= link_to '로그인 화면으로', new_user_session_path, class: 'mx-lg-3 mx-md-1' %>

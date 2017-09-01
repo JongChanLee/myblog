@@ -1,11 +1,4 @@
 .devise {
-  a, a:hover, a:focus, a:visited {
-    font-family: inherit;
-    font-size: inherit;
-    outline: none;
-    text-decoration: none;
-    color: inherit;
-  }
   h2 {
     font-family: Tmon-Tium;
     font-size: 3rem;
@@ -80,6 +73,8 @@
       line-height: 1;
       letter-spacing: 1px;
       transition: all 0.3s;
+      text-decoration: none;
+      color: #181818;
       &:hover {
         color: $main_color
       }
