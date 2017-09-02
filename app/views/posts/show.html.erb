@@ -11,13 +11,13 @@
       <hr>
 
       <!-- Google Adsense start -->
-      <div class="d-flex flex-row align-items-center justify-content-center">
+      <div class="d-flex flex-row align-items-center justify-content-center py-2">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-6305028310642713" data-ad-slot="6587660864"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
       <!-- Google Adsense end -->
-      
+
       <p class="times text-right">작성
         : <%= @post.created_at.strftime("%Y.%m.%d %H:%M") %> <%= "수정 : " + @post.updated_at.strftime("%Y.%m.%d %H:%M") if @post.updated_at != @post.created_at %></p>
       <div class="post-content py-2">
@@ -25,7 +25,7 @@
       </div>
 
       <!-- Google Adsense start -->
-      <div class="d-flex flex-row align-items-center justify-content-center">
+      <div class="d-flex flex-row align-items-center justify-content-center py-2">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-6305028310642713" data-ad-slot="6587660864"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
@@ -47,10 +47,10 @@
                   </div>
                   <% if user_signed_in? && current_user.id == comment.user_id %>
                       <div>
-                        <%= link_to post_edit_comment_path(@post, comment), method: :get, remote: true do %>
+                        <%= link_to post_edit_comment_path(@post, comment), method: :get, remote: true, data: {disable_with: '입력 창 불러오는 중..'} do %>
                             <span class="btn">수정</span>
                         <% end %>
-                        <%= link_to post_comment_path(@post, comment), method: :delete, remote: true, data: {confirm: '댓글을 삭제하시겠습니까?'} do %>
+                        <%= link_to post_comment_path(@post, comment), method: :delete, remote: true, data: {confirm: '댓글을 삭제하시겠습니까?', disable_with: '삭제 중..'} do %>
                             <span class="btn">삭제</span>
                         <% end %>
                       </div>
@@ -67,7 +67,7 @@
         <% if user_signed_in? %>
             <%= form_for @post.comments.build, url: post_comments_path(@post), method: :post, remote: true, html: {class: 'py-2 d-flex flex-row'} do |f| %>
                 <%= f.text_area :content, class: 'w-100 px-3 py-2 comment-textarea' %>
-                <%= f.submit '등록', class: 'px-2' %>
+                <%= f.submit '등록', data: {disable_with: '등록 중..'}, class: 'px-2' %>
             <% end %>
         <% else %>
             <div class="not-signed-in d-flex justify-content-center align-items-center px-4 py-3 my-3">

@@ -121,7 +121,9 @@
             font-family: BM-Jua;
             font-size: 1.1rem;
           }
-          span.btn {
+
+          a {
+            font-family: BM-Jua;
             cursor: pointer;
             transition: all 0.3s;
             &:hover {

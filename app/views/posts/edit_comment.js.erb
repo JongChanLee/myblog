@@ -2,6 +2,6 @@ $('.comment.comment_<%= @comment.id %>').css('display', 'none').after('' +
     '<form class="py-2 d-flex flex-row" id="edit_comment" action="/posts/<%= @comment.post_id %>/comments/<%= @comment.id %>" accept-charset="UTF-8" data-remote="true" method="post">' +
     '<input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put">' +
     '<textarea class="w-100 px-3 py-2" name="comment[content]" id="comment_content"><%= @comment.content %></textarea>' +
-    '<input type="submit" name="commit" value="완료" class="px-2" data-disable-with="완료">' +
+    '<input type="submit" name="commit" value="완료" class="px-2" data-disable-with="수정 중..">' +
     '</form>');
 
