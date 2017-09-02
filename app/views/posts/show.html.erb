@@ -9,11 +9,28 @@
     <div class="post-wrapper col-12">
       <h2 class="py-2"><%= @post.title %></h2>
       <hr>
+
+      <!-- Google Adsense start -->
+      <div class="d-flex flex-row align-items-center justify-content-center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-6305028310642713" data-ad-slot="6587660864"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <!-- Google Adsense end -->
+      
       <p class="times text-right">작성
         : <%= @post.created_at.strftime("%Y.%m.%d %H:%M") %> <%= "수정 : " + @post.updated_at.strftime("%Y.%m.%d %H:%M") if @post.updated_at != @post.created_at %></p>
       <div class="post-content py-2">
         <%= content_tag :div, @post.content.html_safe %>
       </div>
+
+      <!-- Google Adsense start -->
+      <div class="d-flex flex-row align-items-center justify-content-center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-6305028310642713" data-ad-slot="6587660864"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <!-- Google Adsense end -->
 
       <div class="comment-wrapper">
         <div class="d-flex flex-row align-items-center justify-content-between">
