@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   # after_save :set_imgs
 
   belongs_to :user
+  belongs_to :category
   has_many :comments, dependent: :destroy
   has_many :tinymce_images, dependent: :destroy
 

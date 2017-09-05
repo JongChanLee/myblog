@@ -6,6 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 gem 'devise'
+# gem 'cancancan'
+# gem 'rolify'
+
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'tinymce-rails'
@@ -18,6 +21,7 @@ gem 'fog-aws'
 
 gem 'google-analytics-rails'
 gem 'figaro'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use sqlite3 as the database for Active Record
