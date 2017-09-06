@@ -1,0 +1,26 @@
+$('.comments').append('<div class="comment comment_<%= @comment.id %> ">' +
+    '<div class="d-flex flex-row justify-content-between">' +
+    '<div>' +
+    '<span class="user pr-2"><%= @comment.user.email %></span>' +
+    '<span class="time"><%= @comment.created_at.strftime("%Y.%m.%d %H:%M") %></span>' +
+    '</div>' +
+    '<div>' +
+    '<%= link_to edit_post_comment_path(@comment.post, @comment), method: :get, remote: true, data: {disable_with: '입력 창 불러오는 중..'} do %>' +
+    '<span class="btn">수정</span>' +
+    '<% end %>' +
+    '<%= link_to post_comment_path(@comment.post, @comment), method: :delete, remote: true, data: {confirm: '댓글을 삭제하시겠습니까?', disable_with: '삭제 중..'} do %>' +
+    '<span class="btn">삭제</span>' +
+    '<% end %>' +
+    '</div>' +
+    '</div>' +
+    '<div class="content"><%= @comment.content %></div>' +
+    '<hr>' +
+    '</div>'
+
+);
+
+var comments_count = $('span#comment-count');
+comments_count.text(parseInt(comments_count.text()) + 1);
+
+$('textarea.comment-textarea').val("");
+

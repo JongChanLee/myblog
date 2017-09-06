@@ -1,0 +1,4 @@
+$('.comment.comment_<%= @comment.id %>').remove();
+
+var comments_count = $('span#comment-count');
+comments_count.text(parseInt(comments_count.text()) - 1);

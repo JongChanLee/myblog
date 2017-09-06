@@ -47,7 +47,7 @@
                   </div>
                   <% if user_signed_in? && current_user.id == comment.user_id %>
                       <div>
-                        <%= link_to post_edit_comment_path(@post, comment), method: :get, remote: true, data: {disable_with: '입력 창 불러오는 중..'} do %>
+                        <%= link_to edit_post_comment_path(@post, comment), method: :get, remote: true, data: {disable_with: '입력 창 불러오는 중..'} do %>
                             <span class="btn">수정</span>
                         <% end %>
                         <%= link_to post_comment_path(@post, comment), method: :delete, remote: true, data: {confirm: '댓글을 삭제하시겠습니까?', disable_with: '삭제 중..'} do %>
@@ -56,9 +56,7 @@
                       </div>
                   <% end %>
                 </div>
-                <div class="content">
-                  <%= comment.content %>
-                </div>
+                <div class="content"><%= comment.content %></div>
                 <hr>
               </div>
           <% end %>

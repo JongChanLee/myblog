@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :set_comment, only: [:edit_comment, :update_comment, :destroy_comment]
 
   def index
     @posts = Post.where(published: true).order(created_at: 'desc')
@@ -77,43 +76,13 @@ class PostsController < ApplicationController
     end
   end
 
-  def create_comment
-    @comment = Comment.new(comment_params)
-    @comment.post_id = params[:post_id]
-    @comment.user = current_user
-    @comment.save
-    respond_to do |format|
-      format.js
-      # TODO: comment 컨트롤러 개발(ajax 처리 해서)
-    end
-  end
-
-  def edit_comment
-
-  end
-
-  def update_comment
-    @comment.update(comment_params)
-  end
-
-  def destroy_comment
-    @comment.destroy
-  end
-
   private
   def set_post
     @post = Post.find(params[:id])
-  end
-
-  def set_comment
-    @comment = Comment.find(params[:id])
   end
 
   def post_params
     params.require(:post).permit(:title, :content)
   end
 
-  def comment_params
-    params.require(:comment).permit(:content)
-  end
 end
