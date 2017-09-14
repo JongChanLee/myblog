@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
+  resource :categories, except: [:index, :new, :show]
   resources :posts do
     resources :comments, only: [:create, :edit, :update, :destroy]
-
   end
   post '/tinymce_assets' => 'posts#tinymce_img_create'
 

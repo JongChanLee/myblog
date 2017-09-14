@@ -1,3 +1,18 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'font';
+
+$main_color: #AF6C6B;
+
+@import "common/utilities";
+@import "common/normalize";
+@import "common/bootstrap-grid";
+
+.categories {
+  .row {
+    div {
+      background-color: $main_color;
+    }
+  }
+}

@@ -1,9 +1,15 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :main, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_top_categories, only: [:index, :show]
+  before_action :set_bottom_categories, only: [:new, :edit]
 
   def index
-    @posts = Post.where(published: true).order(created_at: 'desc')
+    if params[:category]
+      @posts = Category.where(name: params[:category]).first.posts.where(published: true).order(created_at: 'desc')
+    else
+      @posts = Post.where(published: true).order(created_at: 'desc')
+    end
     @unpublished_posts = Post.where(published: false).all
   end
 
@@ -11,7 +17,6 @@ class PostsController < ApplicationController
     # unless Post.where(published: false).last.title.blank?
     #   Post.create(user: current_user)
     # end
-    # TODO: 임시저장 기능
     @post = Post.new
   end
 
@@ -82,7 +87,22 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :category_id)
   end
 
+  def set_top_categories
+    @categories = Category.where(depth: 1)
+    # @categories = []
+    # Category.all.each do |category|
+    #   @categories << category if category.child_categories.empty?
+    # end
+  end
+
+  def set_bottom_categories
+    @categories = []
+    Category.all.each do |category|
+      @categories << category if category.child_categories.empty?
+    end
+    # Category.where(depth: Category.maximum(:depth))
+  end
 end

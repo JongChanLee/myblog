@@ -1,0 +1,11 @@
+var new_category = '<li>' +
+    '<%= radio_button_tag 'category', @category.id %>' +
+    '<%= label_tag "category_#{@category.id}", @category.name, data: {id: @category.id} %>' +
+    '<ul class="ml-3 category-list">' +
+    '</ul>' +
+    '</li>';
+<% if @category.parent_category_id %>
+$('#category_<%= @category.parent_category_id %>').parent().children('ul').append(new_category);
+<% else %>
+$('.root-category>ul').append(new_category);
+<% end %>

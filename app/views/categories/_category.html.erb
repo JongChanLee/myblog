@@ -1,0 +1,9 @@
+<ul class="ml-3 category-list">
+  <% categories.each do |category| %>
+      <li>
+        <%= radio_button_tag 'category', category.id %>
+        <%= label_tag "category_#{category.id}", category.name, data: {id: category.id} %>
+        <%= render 'categories/category', categories: category.child_categories %>
+      </li>
+  <% end %>
+</ul>

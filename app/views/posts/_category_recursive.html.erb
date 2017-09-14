@@ -1,0 +1,13 @@
+<ul class="ml-3">
+  <% categories.each do |category| %>
+      <li>
+        <% unless category.child_categories.empty? %>
+            <input type="checkbox" id="category_<%= category.id %>">
+            <label for="category_<%= category.id %>"><%= category.name %></label>
+            <%= render 'category_recursive', categories: category.child_categories if category.child_categories %>
+        <% else %>
+            <%= link_to category.name, posts_path(category: category.name) %>
+        <% end %>
+      </li>
+  <% end %>
+</ul>

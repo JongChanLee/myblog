@@ -1,0 +1,9 @@
+<div class="categories p-1">
+  <% if user_signed_in? && current_user.id == 1 %>
+      <%= link_to 'Edit Category', edit_categories_path, class: 'btn-category px-3 py-2 mb-3 d-block text-center' %>
+  <% end %>
+  <h3 class="text-center">카테고리</h3>
+  <div class="mt-2">
+    <%= render 'category_recursive', categories: categories if categories %>
+  </div>
+</div>

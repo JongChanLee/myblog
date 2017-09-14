@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <title>Edit Category</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'categories', media: 'all' %>
+  <%= javascript_include_tag 'categories' %>
+</head>
+<body class="mb-5">
+<section class="categories container mt-5">
+  <h1 class="text-center">Edit Category</h1>
+  <div class="row">
+    <div class="col-4 root-category">
+      <%= render 'categories/category', categories: @categories.where(depth: 1) %>
+    </div>
+    <div class="col-8">
+      <%= form_tag categories_path, method: :put, remote: true do %>
+          <%= hidden_field_tag 'edit_category_id' %>
+          <%= text_field_tag 'edit_category_name' %>
+          <%= submit_tag 'Edit Category' %>
+      <% end %>
+
+      <%= form_tag categories_path, method: :post, remote: true do %>
+          <%= select_tag 'parent_category_id', options_from_collection_for_select(@categories, 'id', 'name'), include_blank: 'Root' %>
+          <%= text_field_tag 'new_category_name' %>
+          <%= submit_tag 'Create New Category' %>
+      <% end %>
+
+      <%= form_tag categories_path, method: :delete, remote: true, data: {confirm: '선택한 카테고리를 삭제합니까?'} do %>
+          <%= hidden_field_tag 'destroy_category_id' %>
+          <%= submit_tag 'Delete Category' %>
+      <% end %>
+    </div>
+  </div>
+</section>
+</body>
+</html>

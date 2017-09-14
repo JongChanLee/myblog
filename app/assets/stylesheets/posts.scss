@@ -4,8 +4,6 @@
   }
   &.index {
     a, a:hover, a:focus, a:visited {
-      font-family: inherit;
-      font-size: inherit;
       outline: none;
       text-decoration: none;
       color: inherit;
@@ -61,7 +59,7 @@
     .post-content {
       word-break: break-all;
       white-space: normal;
-      & img{
+      & img {
         max-width: 100%;
       }
     }
@@ -192,6 +190,56 @@
           &:hover {
             background-color: lighten($main_color, 10%);
           }
+        }
+      }
+    }
+  }
+  .categories {
+    border: 1px solid lighten($main_color, 10%);
+    border-radius: 5px;
+    .btn-category {
+      border: 1px solid $main_color;
+      border-radius: 5px;
+      font-family: Tmon-Tium;
+      color: black;
+      transition: all 0.3s;
+      &:hover {
+        background-color: lighten($main_color, 10%);
+        color: black;
+      }
+    }
+    color: lighten($main_color, 10%);
+    font-family: BM-Dohyeon;
+    font-size: 1rem;
+    *:before {
+      width: 17px;
+      height: 17px;
+      display: inline-block;
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
+    label {
+      color: lighten(black, 5%);
+      cursor: pointer;
+      &:before {
+        content: '-'
+      }
+    }
+    ul {
+      list-style-type: none;
+      a:hover {
+        color: darken($main_color, 15%);
+        font-weight: bold;
+      }
+    }
+    input[type="checkbox"]:checked {
+      & ~ ul {
+        display: none;
+      }
+      & + label {
+        &:before {
+          content: '+';
         }
       }
     }
