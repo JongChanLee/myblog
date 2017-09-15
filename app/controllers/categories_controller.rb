@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+ class CategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :user_admin?
 
@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
 
   def user_admin?
     unless current_user.id == 1
-      redirect_to :back
+      redirect_to posts_path
     end
   end
 end

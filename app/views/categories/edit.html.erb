@@ -13,26 +13,43 @@
 <section class="categories container mt-5">
   <h1 class="text-center">Edit Category</h1>
   <div class="row">
-    <div class="col-4 root-category">
-      <%= render 'categories/category', categories: @categories.where(depth: 1) %>
+    <div class="col-12 col-lg-4">
+      <div class="root-category">
+        <%= radio_button_tag 'root_category', nil %>
+        <%= label_tag 'root_category', 'Root', class: 'py-1 pl-2' %>
+        <%= render 'categories/category', categories: @categories.where(depth: 1) %>
+      </div>
     </div>
-    <div class="col-8">
-      <%= form_tag categories_path, method: :put, remote: true do %>
-          <%= hidden_field_tag 'edit_category_id' %>
-          <%= text_field_tag 'edit_category_name' %>
-          <%= submit_tag 'Edit Category' %>
+    <div class="cil-12 col-lg-8">
+      <%= form_tag categories_path, method: :post, remote: true do %>
+          <h5>새로운 카테고리 생성</h5>
+          <div class="d-flex flex-row ">
+            <div class="d-flex flex-column">
+              <%= select_tag 'parent_category_id', options_from_collection_for_select(@categories, 'id', 'name'), include_blank: 'Root' %>
+              <%= text_field_tag 'new_category_name' %>
+            </div>
+            <%= submit_tag 'Create New Category', class: 'py-1 px-2' %>
+          </div>
       <% end %>
 
-      <%= form_tag categories_path, method: :post, remote: true do %>
-          <%= select_tag 'parent_category_id', options_from_collection_for_select(@categories, 'id', 'name'), include_blank: 'Root' %>
-          <%= text_field_tag 'new_category_name' %>
-          <%= submit_tag 'Create New Category' %>
+      <%= form_tag categories_path, method: :put, remote: true do %>
+          <h5>카테고리 이름 바꾸기</h5>
+          <%= hidden_field_tag 'edit_category_id' %>
+          <div>
+            <%= text_field_tag 'edit_category_name' %>
+          </div>
+          <%= submit_tag 'Edit Category', class: 'py-1 px-2' %>
       <% end %>
 
       <%= form_tag categories_path, method: :delete, remote: true, data: {confirm: '선택한 카테고리를 삭제합니까?'} do %>
+          <h5>카테고리 삭제</h5>
           <%= hidden_field_tag 'destroy_category_id' %>
-          <%= submit_tag 'Delete Category' %>
+          <%= submit_tag 'Delete Category', class: 'py-1 px-2' %>
       <% end %>
+
+      <div class="py-4">
+        <%= link_to '완    료', posts_path, class: 'py-1 px-2 btn-done d-block text-center mx-auto' %>
+      </div>
     </div>
   </div>
 </section>

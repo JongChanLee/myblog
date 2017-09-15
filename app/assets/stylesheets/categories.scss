@@ -10,8 +10,41 @@ $main_color: #AF6C6B;
 @import "common/bootstrap-grid";
 
 .categories {
-  .row {
-    div {
+  h1 {
+    font-family: Tmon-Tium;
+    font-size: 2rem;
+  }
+  .root-category {
+    border: 1px solid $main_color;
+    ul {
+      list-style-type: none;
+    }
+    input[type="radio"] {
+      display: none;
+      &:checked ~ label {
+        background-color: $main_color;
+        &:hover {
+          background-color: darken($main_color, 20%);
+        }
+      }
+    }
+    label {
+      display: block;
+      font-family: Tmon-Tium;
+      &:hover {
+        background-color: #666666;
+      }
+    }
+  }
+  .btn-done {
+    text-decoration: none;
+    color: black;
+    max-width: 100px;
+    font-family: Tmon-Monsori;
+    font-size: 1.2rem;
+    border: 1px solid $main_color;
+    transition: all 0.2s;
+    &:hover {
       background-color: $main_color;
     }
   }
