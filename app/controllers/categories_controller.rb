@@ -3,7 +3,7 @@
   before_action :user_admin?
 
   layout false
-
+  # TODO: 나중에 시간되면 카테고리 수정페이지 디자인하기. (현재 css 안되있음)
   def create
     @category = Category.new
     @category.name = params[:new_category_name]
@@ -14,7 +14,6 @@
   end
 
   def edit
-    # @categories = Category.where(depth: 1)
     @categories = Category.all
   end
 
