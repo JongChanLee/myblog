@@ -42,10 +42,17 @@
           font-size: 1.1rem;
           width: 100%;
         }
-        p.times {
+
+        .comments-count {
+          font-family: Tmon-Monsori;
+          line-height: 1;
+        }
+        .times {
           font-size: 0.8rem;
+          line-height: 1;
           font-family: Tmon-Monsori;
           color: #666666;
+
         }
       }
     }

@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Category.all.each do |category|
+  category.posts_count = category.posts.count
+  category.save
+end
+
+Post.all.each do |post|
+  post.comments_count = post.comments.count
+  post.save
+end
