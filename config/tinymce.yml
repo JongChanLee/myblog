@@ -10,6 +10,8 @@ plugins:
   - searchreplace
   - uploadimage
 
+relative_urls: false
+
 codesample_languages: [
         {text: 'HTML/XML', value: 'markup'},
         {text: 'JavaScript', value: 'javascript'},
