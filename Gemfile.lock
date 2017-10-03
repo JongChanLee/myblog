@@ -132,6 +132,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
+    meta-tags (2.6.0)
+      actionpack (>= 3.2.0, < 5.3)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -283,6 +285,7 @@ DEPENDENCIES
   google-analytics-rails
   jbuilder (~> 2.5)
   jquery-rails
+  meta-tags
   prism-rails
   puma (~> 3.7)
   rails (~> 5.1.3)

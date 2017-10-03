@@ -11,6 +11,15 @@ class PostsController < ApplicationController
       @posts = Post.where(published: true).order(created_at: 'desc')
     end
     @unpublished_posts = Post.where(published: false).all
+
+    set_meta_tags title: params[:category] ? "#{params[:category]} Posts" : 'All Posts',
+                  image_src: ActionController::Base.helpers.asset_path('profile.png', host: root_url),
+                  og: {
+                      title: params[:category] ? "#{params[:category]} Posts" : 'All Posts',
+                      type: 'website',
+                      url: posts_url,
+                      image: ActionController::Base.helpers.asset_url('profile.png', host: root_url)
+                  }
   end
 
   def new
@@ -43,6 +52,21 @@ class PostsController < ApplicationController
     if !@post.published && current_user.id != 1
       redirect_to posts_path
     end
+    set_meta_tags title: @post.title,
+                  keywords: @post.tags.map {|tag| tag.name},
+                  description: @post.content,
+                  og: {
+                    title: @post.title,
+                    type: 'article',
+                    url: post_url(@post),
+                    image: @post.tinymce_images.map {|image| image.url},
+                  },
+                  article: {
+                      published_time: @post.created_at,
+                      modified_time: @post.updated_at,
+                      tag: @post.tags.map {|tag| tag.name},
+                      author: ['JongChan Lee', 'TuTanKhamen']
+                  }
   end
 
   def edit

@@ -23,6 +23,7 @@ gem 'fog-aws'
 
 gem 'google-analytics-rails'
 gem 'figaro'
+gem 'meta-tags'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
