@@ -5,6 +5,13 @@ class Post < ApplicationRecord
   belongs_to :category, optional: true, counter_cache: true
   has_many :comments, dependent: :destroy
   has_many :tinymce_images, dependent: :destroy
+  has_and_belongs_to_many :tags
+
+  attr_reader :tag_tokens
+
+  def tag_tokens=(tokens)
+    self.tag_ids = Tag.ids_from_tokens(tokens)
+  end
 
 
   private

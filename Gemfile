@@ -9,7 +9,9 @@ gem 'devise'
 # gem 'cancancan'
 # gem 'rolify'
 
+
 gem 'jquery-rails'
+gem 'rails_tokeninput'
 gem 'font-awesome-rails'
 gem 'tinymce-rails'
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'

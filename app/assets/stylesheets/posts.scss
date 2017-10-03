@@ -99,6 +99,17 @@
         font-family: BM-Hanna;
         color: slategrey;
       }
+      .tokens {
+        .token {
+          font-size: 1rem;
+          line-height:1;
+          font-family: YJ-Yache;
+          font-weight: 700;
+          color: #181818;
+          background-color: $main_color;
+          border-radius: 10px;
+        }
+      }
       .comment-wrapper {
         a, a:hover, a:focus, a:visited {
           font-family: inherit;
@@ -175,6 +186,9 @@
         font-family: Tmon-Monsori;
         font-size: 1.2rem;
         border-radius: 5px;
+      }
+      ul.token-input-list-facebook {
+        width: 100%;
       }
       .tinymce-wrapper {
         .tinymce {

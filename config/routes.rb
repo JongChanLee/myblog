@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
+  resources :tags, only: [:index]
   resource :categories, except: [:index, :new, :show]
   resources :posts do
     resources :comments, only: [:create, :edit, :update, :destroy]

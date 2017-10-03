@@ -9,7 +9,15 @@
     <div class="post-wrapper col-12">
       <h2 class="py-2"><%= @post.title %></h2>
       <hr>
-
+      <p class="times text-right">작성
+        : <%= @post.created_at.strftime("%Y.%m.%d %H:%M") %> <%= "수정 : " + @post.updated_at.strftime("%Y.%m.%d %H:%M") if @post.updated_at != @post.created_at %></p>
+      <div class="tokens">
+        <% @post.tags.each do |tag| %>
+            <span class="token py-1 px-2 mx-1">
+              <%= tag.name %>
+            </span>
+        <% end %>
+      </div>
       <!-- Google Adsense start -->
       <div class="d-flex flex-row align-items-center justify-content-center py-2">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -18,8 +26,6 @@
       </div>
       <!-- Google Adsense end -->
 
-      <p class="times text-right">작성
-        : <%= @post.created_at.strftime("%Y.%m.%d %H:%M") %> <%= "수정 : " + @post.updated_at.strftime("%Y.%m.%d %H:%M") if @post.updated_at != @post.created_at %></p>
       <div class="post-content py-2">
         <%= content_tag :div, @post.content.html_safe %>
       </div>

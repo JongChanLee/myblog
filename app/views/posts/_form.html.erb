@@ -1,8 +1,15 @@
 <%= form_for @post, html: {id: 'form', class: 'mb-5'} do |f| %>
-    <%= f.text_field :title, class: 'w-100 py-2 px-3 mb-3' %>
+    <div class="mb-3">
+      <%= f.text_field :title, class: 'w-100 py-2 px-3' %>
+    </div>
 
-    <%= f.collection_select :category_id, @categories, :id, :name %>
-    <%# FIXME: 수정할 때는 기본 값을 post의 category로 되게끔 해야함. -> 책보고 수정  %>
+    <div class="py-2 px-2">
+      <%= f.collection_select :category_id, @categories, :id, :name %>
+    </div>
+
+    <div class="py-2 px-2">
+      <%= f.text_field :tag_tokens, id: :post_tag_tokens, data: {load: @post.tags} %>
+    </div>
 
     <%= tinymce %>
     <div class="tinymce-wrapper">
